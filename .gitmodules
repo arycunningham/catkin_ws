@@ -1,0 +1,12 @@
+[submodule "src/breadcrumb"]
+	path = src/breadcrumb
+	url = https://github.com/arycunningham/breadcrumb.git
+[submodule "src/depthai_publisher"]
+	path = src/depthai_publisher
+	url = https://github.com/arycunningham/depthai_publisher.git
+[submodule "src/qutas_lab_450"]
+	path = src/qutas_lab_450
+	url = https://github.com/arycunningham/qutas_lab_450.git
+[submodule "src/spar"]
+	path = src/spar
+	url = https://github.com/arycunningham/spar.git
