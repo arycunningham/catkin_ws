@@ -1,0 +1,51 @@
+# Camera properties for OAK-D
+camera_model:
+  # Overwrite by the network size below. Horizontal resolution in pixels for publishing.
+  width_res: 256 #640
+  # Overwrite by the network size below. Vertical resolution in pixels for publishing.
+  height_res: 256 #480
+
+  # Rate of published 'CompressedImage' messages in Hz.
+  pub_rate: 25.0
+
+  # Cam option:['rgb', 'left', 'right']
+  cam_input: 'rgb'
+
+  # Sensor width in milimetres.
+  sensor_width: 1.968
+  # Sensor height in milimetres.
+  sensor_height: 1.488
+  # Focal length in milimetres.
+  focal_length: 2.484
+  # Gimbal angle (from the Z axis) in degrees.
+  gimbal_angle: 0.0
+
+  # Sensor offset from FCU in metres.
+  offset_x: 0.0
+  offset_y: 0.0
+  offset_z: 0.0
+
+## DEPTH-AI PEOPLE EXAMPLE
+network_model:
+  # Network inputs/outputs 'Unet' w480h256, 'DeepLab' w480h256, ,deeplab_v3example,256x256
+  # Horizontal resolution in pixels for network input/output.
+  nn_shape_w: 256
+  # Vertical resolution in pixels for network input/output.
+  nn_shape_h: 256
+  # Minimum detection threshold (%).
+  detect_threshold: 10
+  # Model name, supported blob file from model folder.
+  model_name: "deeplab_v3_plus_mvn2_decoder_256_openvino_2021.2_6shave.blob"
+
+## Resnet18
+# network_model:
+#   # Network inputs/outputs 'Unet' w480h256, 'DeepLab' w480h256, ,deeplab_v3example,256x256
+#   # Horizontal resolution in pixels for network input/output.
+#   nn_shape_w: 256
+#   # Vertical resolution in pixels for network input/output.
+#   nn_shape_h: 192
+#   # Minimum detection threshold (%).
+#   detect_threshold: 1.0
+#   # Model name, supported blob file from model folder.
+#   #model_name: "res18_skip_exp9.blob"
+#   model_name: "output_exp_3.blob"

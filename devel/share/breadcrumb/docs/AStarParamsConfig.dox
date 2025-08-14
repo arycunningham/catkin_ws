@@ -1,0 +1,10 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~allow_diagonals" : \b [bool] Allows the path tracking to output diagonal movements min: False, default: True, max: True
+- \b "~obstacle_threshold" : \b [int] At what occupancy probability where an obstacle is counted in the search min: 0, default: 50, max: 100
+- \b "~search_heuristic" : \b [int] Heuristic to use during A* search min: 0, default: 1, max: 2
+- \b "~calc_sparse_path" : \b [bool] Enables calculation of the sparse path result min: False, default: True, max: True
+- \b "~any_angle" : \b [bool] Enables calculation using Theta* any-angle pathing method min: False, default: True, max: True
+

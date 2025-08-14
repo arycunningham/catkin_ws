@@ -1,0 +1,27 @@
+
+<!-- <?xml version="1.0"?> -->
+<launch>
+    <!-- ZZZZZZZZZZZZZZZZZZZZZ Configuration Arguments ZZZZZZZZZZZZZZZZZZZZZ -->
+	<!-- Global arguments -->
+	<arg name="runSimulation" default="True"/>
+	<arg name="rviz_config" default="$(find uav4pe_environments)/launch/uav4pe_nav_view.rviz"/>
+
+	<!-- ZZZZZZZZZZZZZZZZZZZZZ ROS nodes ZZZZZZZZZZZZZZZZZZZZZ -->
+	<!-- Execution Real/simulation -->
+	<group unless="$(arg runSimulation)">
+		<include file="$(find uav4pe_environments)/launch/load_uav4pe.launch">
+			<arg name="target_model_x" value="-1.4"/>
+		</include>
+		<include file="$(find uav4pe_environments)/launch/com_sim.launch"/>
+		<include file="$(find qutas_lab_450)/launch/environment.launch"/>
+	</group>
+
+	<!-- Execution under internal simulator -->
+	<group if="$(arg runSimulation)">
+		<!-- launch QUTAS UAVasr simulation environment -->
+		<include file="$(find spar_node)/launch/spar_uavasr.launch"/>
+		<!-- launch rviz -->
+		<node type="rviz" name="rviz" pkg="rviz" args="-d $(arg rviz_config)" />
+	</group>
+
+</launch>

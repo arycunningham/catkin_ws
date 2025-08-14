@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/install
+
+Name: egh450_image_processor
+Description: Description of egh450_image_processor
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

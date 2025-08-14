@@ -1,0 +1,13 @@
+
+<!-- <?xml version="1.0"?> -->
+<launch>
+    <!-- ZZZZZZZZZZZZZZZZZZZZZ Configuration Arguments ZZZZZZZZZZZZZZZZZZZZZ -->
+	<!-- Global arguments -->
+	<arg name="runSimulation" default="True"/>
+	<arg name="debug_planexp" default="False"/>
+
+	<!-- ZZZZZZZZZZZZZZZZZZZZZ ROS nodes ZZZZZZZZZZZZZZZZZZZZZ -->
+	<!-- Execution Real/simulation -->
+	<node pkg="uav4pe_navigation" name="uav4pe_navigate_node" type="uav4pe_navigate" output="screen" args="--simulation $(arg runSimulation)"/>
+	
+</launch>

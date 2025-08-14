@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/devel
+
+Name: uav4pe_environments
+Description: Description of uav4pe_environments
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib -luav4pe_environments
+Requires: roscpp roslib std_msgs geometry_msgs message_runtime mavros tf

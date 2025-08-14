@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+## Declare argument parsing variables
+URI=""
+cameraName="oak_d_RGB"
+mission="false"
+hil="false"
+
+# Parse script arguments
+POSITIONAL=()
+while [[ $# -gt 0 ]]; do
+  key="$1"
+
+  case $key in
+  -u | --uri)
+    URI="$2"
+    shift # past argument
+    shift # past value
+    ;;
+  -mm | --mission_mode)
+    mission="true"
+    shift # past argument
+    ;;
+  -cn | --camera_name)
+    cameraName="$2"
+    shift # past argument
+    shift # past value
+    ;;
+  --hil)
+    hil="true"
+    shift # past argument
+    ;;
+  *)                   # unknown option
+    POSITIONAL+=("$1") # save it in an array for later
+    shift              # past argument
+    ;;
+  esac
+done
+set -- "${POSITIONAL[@]}" # restore positional parameters
+
+## Export ROS environment variables
+host=$(hostname -I | cut -d' ' -f1)
+if [[ $URI != "" ]]; then
+  export ROS_MASTER_URI=http://$URI:11311
+  streamCamera="false"
+  clientIP=$URI
+else
+  export ROS_MASTER_URI=http://$host:11311
+  streamCamera="true"
+  clientIP="${SSH_CLIENT%% *}"
+fi
+export ROS_IP=$host
+
+# The following commands will activate OPENVINO environment
+# export OPENVINO_PATH=/opt/intel/openvino_2021
+# source $OPENVINO_PATH/bin/setupvars.sh
+
+# Launch myriad_objDetector.launch with arguments
+roslaunch planetexp_vision oak_d_objDetector.launch \
+  camera_name:=$cameraName \
+  mission_mode:=$mission \
+  use_hil:=$hil

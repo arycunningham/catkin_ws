@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cdrone/catkin_ws/src/breadcrumb/include/breadcrumb/AStar.h
+vector
+-
+functional
+-
+set
+-
+
+/home/cdrone/catkin_ws/src/breadcrumb/src/breadcrumb/AStar.cpp
+breadcrumb/AStar.h
+-
+algorithm
+-
+limits
+-
+math.h
+-
+

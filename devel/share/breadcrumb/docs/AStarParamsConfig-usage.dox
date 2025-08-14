@@ -1,0 +1,11 @@
+\subsubsection usage Usage
+\verbatim
+<node name="breadcrumb" pkg="breadcrumb" type="breadcrumb">
+  <param name="allow_diagonals" type="bool" value="True" />
+  <param name="obstacle_threshold" type="int" value="50" />
+  <param name="search_heuristic" type="int" value="1" />
+  <param name="calc_sparse_path" type="bool" value="True" />
+  <param name="any_angle" type="bool" value="True" />
+</node>
+\endverbatim
+

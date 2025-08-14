@@ -1,0 +1,241 @@
+Panels:
+  - Class: rviz/Displays
+    Help Height: 84
+    Name: Displays
+    Property Tree Widget:
+      Expanded: ~
+      Splitter Ratio: 0.5
+    Tree Height: 211
+  - Class: rviz/Selection
+    Name: Selection
+  - Class: rviz/Tool Properties
+    Expanded:
+      - /2D Pose Estimate1
+      - /2D Nav Goal1
+      - /Publish Point1
+    Name: Tool Properties
+    Splitter Ratio: 0.5886790156364441
+  - Class: rviz/Views
+    Expanded:
+      - /Current View1
+      - /Current View1/Focal Point1
+    Name: Views
+    Splitter Ratio: 0.5
+  - Class: rviz/Time
+    Experimental: false
+    Name: Time
+    SyncMode: 0
+    SyncSource: oak_d_RGB
+Preferences:
+  PromptSaveOnExit: true
+Toolbars:
+  toolButtonStyle: 2
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Alpha: 0.5
+      Cell Size: 1
+      Class: rviz/Grid
+      Color: 160; 160; 164
+      Enabled: true
+      Line Style:
+        Line Width: 0.029999999329447746
+        Value: Lines
+      Name: Grid
+      Normal Cell Count: 0
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Plane: XY
+      Plane Cell Count: 40
+      Reference Frame: <Fixed Frame>
+      Value: true
+    - Alpha: 1
+      Axes Length: 1
+      Axes Radius: 0.10000000149011612
+      Class: rviz/Pose
+      Color: 255; 25; 0
+      Enabled: true
+      Head Length: 0.30000001192092896
+      Head Radius: 0.10000000149011612
+      Name: robotPose
+      Shaft Length: 1
+      Shaft Radius: 0.05000000074505806
+      Shape: Arrow
+      Topic: /mavros/local_position/pose
+      Unreliable: false
+      Value: true
+    - Class: rviz/TF
+      Enabled: true
+      Frame Timeout: 15
+      Frames:
+        All Enabled: true
+        base_link:
+          Value: true
+        base_link_frd:
+          Value: true
+        hbv_1615_link:
+          Value: true
+        local_origin:
+          Value: true
+        map:
+          Value: true
+        map_ned:
+          Value: true
+        odom:
+          Value: true
+        odom_ned:
+          Value: true
+      Marker Scale: 3
+      Name: TF
+      Show Arrows: true
+      Show Axes: true
+      Show Names: true
+      Tree:
+        map:
+          base_link:
+            base_link_frd:
+              {}
+            hbv_1615_link:
+              {}
+          local_origin:
+            {}
+          map_ned:
+            {}
+      Update Interval: 0
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /oak_d_RGB/image_rect_color
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: oak_d_RGB
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+    - Class: rviz/Image
+      Enabled: true
+      Image Topic: /scouter_vision/processed_image
+      Max Value: 1
+      Median window: 5
+      Min Value: 0
+      Name: CNN_output
+      Normalize Range: true
+      Queue Size: 2
+      Transport Hint: compressed
+      Unreliable: false
+      Value: true
+  Enabled: true
+  Global Options:
+    Background Color: 48; 48; 48
+    Default Light: true
+    Fixed Frame: map
+    Frame Rate: 30
+  Name: root
+  Tools:
+    - Class: rviz/Interact
+      Hide Inactive Objects: true
+    - Class: rviz/MoveCamera
+    - Class: rviz/Select
+    - Class: rviz/FocusCamera
+    - Class: rviz/Measure
+    - Class: rviz/SetInitialPose
+      Theta std deviation: 0.2617993950843811
+      Topic: /initialpose
+      X std deviation: 0.5
+      Y std deviation: 0.5
+    - Class: rviz/SetGoal
+      Topic: /move_base_simple/goal
+    - Class: rviz/PublishPoint
+      Single click: true
+      Topic: /clicked_point
+  Value: true
+  Views:
+    Current:
+      Class: rviz/ThirdPersonFollower
+      Distance: 12.805974006652832
+      Enable Stereo Rendering:
+        Stereo Eye Separation: 0.05999999865889549
+        Stereo Focal Distance: 1
+        Swap Stereo Eyes: false
+        Value: false
+      Focal Point:
+        X: -4.880985260009766
+        Y: -0.059876948595047
+        Z: 0.9625685811042786
+      Focal Shape Fixed Size: true
+      Focal Shape Size: 0.0010000000474974513
+      Invert Z Axis: false
+      Name: Current View
+      Near Clip Distance: 0.0010000000474974513
+      Pitch: 0.834798276424408
+      Target Frame: world
+      Value: ThirdPersonFollower (rviz)
+      Yaw: 3.1152586936950684
+    Saved:
+      - Class: rviz/ThirdPersonFollower
+        Distance: 10
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 0
+          Y: 0
+          Z: 0
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: ThirdPersonFollower
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 0.220398411154747
+        Target Frame: camera_link
+        Value: ThirdPersonFollower (rviz)
+        Yaw: 4.6985859870910645
+      - Class: rviz/Orbit
+        Distance: 49.451011657714844
+        Enable Stereo Rendering:
+          Stereo Eye Separation: 0.05999999865889549
+          Stereo Focal Distance: 1
+          Swap Stereo Eyes: false
+          Value: false
+        Focal Point:
+          X: 5.3691325187683105
+          Y: -1.0358270406723022
+          Z: -0.004137078765779734
+        Focal Shape Fixed Size: true
+        Focal Shape Size: 0.05000000074505806
+        Invert Z Axis: false
+        Name: Orbit
+        Near Clip Distance: 0.009999999776482582
+        Pitch: 1.5697963237762451
+        Target Frame: world
+        Value: Orbit (rviz)
+        Yaw: 3.120396137237549
+Window Geometry:
+  "&CNN_output":
+    collapsed: false
+  "&Displays":
+    collapsed: false
+  "&Time":
+    collapsed: false
+  "&oak_d_RGB":
+    collapsed: false
+  Height: 1051
+  Hide Left Dock: false
+  Hide Right Dock: true
+  QMainWindow State: 000000ff00000000fd00000004000000000000017000000383fc0200000014fb000000100044006900730070006c006100790073010000002600000173000000f601000003fb0000000e0048004200560031003600310035000000024a0000015f0000000000000000fc00000278000001310000000000fffffffa000000000100000001fb0000000c006f007600380038003500380000000000ffffffff0000000000000000fb0000001200530065006c0065006300740069006f006e00000001e10000009b0000007601000003fb0000001e0054006f006f006c002000500072006f007000650072007400690065007302000001ed000001df00000185000000a3fb000000120056006900650077007300200054006f006f02000001df000002110000018500000122fb000000200054006f006f006c002000500072006f0070006500720074006900650073003203000002880000011d000002210000017afb0000002000730065006c0065006300740069006f006e00200062007500660066006500720200000138000000aa0000023a00000294fb00000014005700690064006500530074006500720065006f02000000e6000000d2000003ee0000030bfb0000000c004b0069006e0065006300740200000186000001060000030c00000261fb0000000e0072003200300030002d00490052020000000b000000260000015f00000105fb000000140072003200300030002d00440045005000540048020000000a0000012a000001600000011efb000000140069007200690073005f006400650070007400680200000169000000e20000015600000115fb00000012005200470042002d006e0061006400690072020000016b0000031b000001560000011afb0000000c006f00760037003200350031030000000a0000029400000162000000f0fb0000002a00500072006f006300650073007300650064004600720061006d0065005f006f0076003700320035003102000004f70000024900000280000001e7fb0000000c00430061006d0065007200610000000339000000cd0000000000000000fb0000000a0049006d00610067006501000001cb000001240000000000000000fb00000012006f0061006b005f0064005f005200470042010000019a000000fb0000002201000003fb000000140043004e004e005f006f0075007400700075007401000002960000011300000022010000030000000100000100000001c2fc0200000004fb0000001e0054006f006f006c002000500072006f00700065007200740069006500730100000041000000780000000000000000fb0000000a00560069006500770073000000003a000001c2000000ce01000003fb000000100072003200300030002d005200470042020000000a0000024900000160000000fefb0000001200530065006c0065006300740069006f006e010000025a000000b200000000000000000000000200000490000000a9fc0100000001fb0000000a00560069006500770073030000004e00000080000002e10000019700000003000003c00000004bfc0100000002fb0000000800540069006d00650100000000000003c00000024401000003fb0000000800540069006d006501000000000000045000000000000000000000024f0000038300000004000000040000000800000008fc0000000100000002000000010000000a0054006f006f006c00730100000000ffffffff0000000000000000
+  Selection:
+    collapsed: false
+  Tool Properties:
+    collapsed: false
+  Views:
+    collapsed: true
+  Width: 960
+  X: 0
+  Y: 0

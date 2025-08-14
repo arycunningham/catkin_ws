@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/devel
+
+Name: uavasr_emulator
+Description: Description of uavasr_emulator
+Version: 0.0.0
+Cflags: -I/home/cdrone/catkin_ws/devel/include
+Libs: -L${prefix}/lib 
+Requires: 

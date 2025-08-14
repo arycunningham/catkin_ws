@@ -1,0 +1,9 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~framerate" : \b [double] Output framerate for the camera min: 0.0, default: 10.0, max: std::numeric_limits<double>::infinity()
+- \b "~field_of_view" : \b [double] Field of view for the camera min: 0.0, default: 60.0, max: 180.0
+- \b "~resolution_width" : \b [int] Number of pixels for the horizontal resolution min: 0, default: 640, max: 2147483647
+- \b "~resolution_height" : \b [int] Number of pixels for the vertical resolution min: 0, default: 480, max: 2147483647
+

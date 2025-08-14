@@ -1,0 +1,15 @@
+\subsubsection usage Usage
+\verbatim
+<node name="uavasr_emulator" pkg="uavasr_emulator" type="uavasr_emulator">
+  <param name="auto_disarm_height" type="double" value="0.2" />
+  <param name="w0_xy" type="double" value="1.0" />
+  <param name="w0_z" type="double" value="1.0" />
+  <param name="w0_psi" type="double" value="1.0" />
+  <param name="max_vel_xy" type="double" value="2.5" />
+  <param name="max_vel_z" type="double" value="1.0" />
+  <param name="rate_state" type="double" value="1.0" />
+  <param name="rate_battery" type="double" value="1.0" />
+  <param name="rate_pose" type="double" value="50.0" />
+</node>
+\endverbatim
+

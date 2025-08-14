@@ -1,0 +1,112 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~camera_i_enable_imu" : \b [bool] Enabling imu min: False, default: True, max: True
+- \b "~camera_i_enable_ir" : \b [bool] Enabling IR min: False, default: True, max: True
+- \b "~camera_i_floodlight_brightness" : \b [double] Floodlight brightness min: 0.0, default: 0.0, max: 1500.0
+- \b "~camera_i_ip" : \b [str] IP min: , default: , max: 
+- \b "~camera_i_laser_dot_brightness" : \b [double] Laser dot brightness min: 0.0, default: 800.0, max: 1200.0
+- \b "~camera_i_mx_id" : \b [str] MXID min: , default: , max: 
+- \b "~camera_i_usb_port_id" : \b [str] USB port ID min: , default: , max: 
+- \b "~camera_i_nn_type" : \b [str] NN Type min: , default: spatial, max: 
+- \b "~camera_i_pipeline_type" : \b [str] Pipeline type min: , default: RGBD, max: 
+- \b "~camera_i_usb_speed" : \b [str] USB Speed min: , default: SUPER_PLUS, max: 
+- \b "~left_i_board_socket_id" : \b [int] Sensor board socket id min: -2147483648, default: 1, max: 2147483647
+- \b "~left_i_calibration_file" : \b [str] Path to calibration file min: , default: , max: 
+- \b "~left_i_fps" : \b [double] FPS min: -std::numeric_limits<double>::infinity(), default: 30.0, max: std::numeric_limits<double>::infinity()
+- \b "~left_i_height" : \b [int] Image height min: -2147483648, default: 720, max: 2147483647
+- \b "~left_r_keep_preview_aspect_ratio" : \b [bool] Keep preview aspect ratio min: False, default: True, max: True
+- \b "~left_i_low_bandwidth" : \b [bool] Use encoding for data min: False, default: False, max: True
+- \b "~left_i_low_bandwidth_quality" : \b [int] Quality when using low-bandwidth mode min: 1, default: 50, max: 100
+- \b "~left_i_max_q_size" : \b [int] Internal queue size min: -2147483648, default: 30, max: 2147483647
+- \b "~left_i_preview_size" : \b [int] Preview size min: -2147483648, default: 416, max: 2147483647
+- \b "~left_i_publish_topic" : \b [bool] Enable ROS topic min: False, default: False, max: True
+- \b "~left_i_resolution" : \b [str] Sensor resolution min: , default: 720, max: 
+- \b "~left_i_set_isp_scale" : \b [bool] Set ISP scale min: False, default: True, max: True
+- \b "~left_i_width" : \b [int] Image height min: -2147483648, default: 1280, max: 2147483647
+- \b "~left_r_exposure" : \b [int] Sensor exposure min: 1, default: 1000, max: 33000
+- \b "~left_r_focus" : \b [int] Focus min: 0, default: 1, max: 255
+- \b "~left_r_iso" : \b [int] Sensor iso min: 100, default: 800, max: 1600
+- \b "~left_r_set_man_exposure" : \b [bool] Enable manual exposure min: False, default: False, max: True
+- \b "~left_r_set_man_focus" : \b [bool] Enable manual focus min: False, default: False, max: True
+- \b "~left_r_set_man_whitebalance" : \b [bool] Enable manual whitebalance min: False, default: False, max: True
+- \b "~left_r_whitebalance" : \b [int] Whitebalance min: 1000, default: 3300, max: 12000
+- \b "~right_i_board_socket_id" : \b [int] Sensor board socket id min: -2147483648, default: 2, max: 2147483647
+- \b "~right_i_calibration_file" : \b [str] Path to calibration file min: , default: , max: 
+- \b "~right_i_fps" : \b [double] FPS min: -std::numeric_limits<double>::infinity(), default: 30.0, max: std::numeric_limits<double>::infinity()
+- \b "~right_i_height" : \b [int] Image height min: -2147483648, default: 720, max: 2147483647
+- \b "~right_r_keep_preview_aspect_ratio" : \b [bool] Keep preview aspect ratio min: False, default: True, max: True
+- \b "~right_i_low_bandwidth" : \b [bool] Use encoding for data min: False, default: False, max: True
+- \b "~right_i_low_bandwidth_quality" : \b [int] Quality when using low-bandwidth mode min: 1, default: 50, max: 100
+- \b "~right_i_max_q_size" : \b [int] Internal queue size min: -2147483648, default: 30, max: 2147483647
+- \b "~right_i_preview_size" : \b [int] Preview size min: -2147483648, default: 416, max: 2147483647
+- \b "~right_i_publish_topic" : \b [bool] Enable ROS topic min: False, default: False, max: True
+- \b "~right_i_resolution" : \b [str] Sensor resolution min: , default: 720, max: 
+- \b "~right_i_set_isp_scale" : \b [bool] Set ISP scale min: False, default: True, max: True
+- \b "~right_i_width" : \b [int] Image height min: -2147483648, default: 1280, max: 2147483647
+- \b "~right_r_exposure" : \b [int] Sensor exposure min: 1, default: 1000, max: 33000
+- \b "~right_r_focus" : \b [int] Focus min: 0, default: 1, max: 255
+- \b "~right_r_iso" : \b [int] Sensor iso min: 100, default: 800, max: 1600
+- \b "~right_r_set_man_exposure" : \b [bool] Enable manual exposure min: False, default: False, max: True
+- \b "~right_r_set_man_focus" : \b [bool] Enable manual focus min: False, default: False, max: True
+- \b "~right_r_set_man_whitebalance" : \b [bool] Enable manual whitebalance min: False, default: False, max: True
+- \b "~right_r_whitebalance" : \b [int] Whitebalance min: 1000, default: 3300, max: 12000
+- \b "~rgb_i_board_socket_id" : \b [int] Sensor board socket id min: -2147483648, default: 0, max: 2147483647
+- \b "~rgb_i_calibration_file" : \b [str] Path to calibration file min: , default: , max: 
+- \b "~rgb_i_fps" : \b [double] FPS min: -std::numeric_limits<double>::infinity(), default: 60.0, max: std::numeric_limits<double>::infinity()
+- \b "~rgb_i_height" : \b [int] Image height min: -2147483648, default: 720, max: 2147483647
+- \b "~rgb_i_interleaved" : \b [bool] Is frame interleaved or planar min: False, default: True, max: True
+- \b "~rgb_r_keep_preview_aspect_ratio" : \b [bool] Keep preview aspect ratio min: False, default: True, max: True
+- \b "~rgb_i_low_bandwidth" : \b [bool] Use encoding for data min: False, default: False, max: True
+- \b "~rgb_i_low_bandwidth_quality" : \b [int] Quality when using low-bandwidth mode min: 1, default: 50, max: 100
+- \b "~rgb_i_max_q_size" : \b [int] Internal queue size min: -2147483648, default: 30, max: 2147483647
+- \b "~rgb_i_preview_size" : \b [int] Preview size min: -2147483648, default: 416, max: 2147483647
+- \b "~rgb_i_publish_topic" : \b [bool] Enable ROS topic min: False, default: True, max: True
+- \b "~rgb_i_enable_preview" : \b [bool] Enable ROS topic min: False, default: False, max: True
+- \b "~rgb_i_resolution" : \b [str] Sensor resolution min: , default: 1080, max: 
+- \b "~rgb_i_set_isp_scale" : \b [bool] Set ISP scale min: False, default: True, max: True
+- \b "~rgb_i_width" : \b [int] Image height min: -2147483648, default: 1280, max: 2147483647
+- \b "~rgb_r_exposure" : \b [int] Sensor exposure min: 1, default: 1000, max: 33000
+- \b "~rgb_r_focus" : \b [int] Focus min: 0, default: 1, max: 255
+- \b "~rgb_r_iso" : \b [int] Sensor iso min: 100, default: 800, max: 1600
+- \b "~rgb_r_set_man_exposure" : \b [bool] Enable manual exposure min: False, default: False, max: True
+- \b "~rgb_r_set_man_focus" : \b [bool] Enable manual focus min: False, default: False, max: True
+- \b "~rgb_r_set_man_whitebalance" : \b [bool] Enable manual whitebalance min: False, default: False, max: True
+- \b "~rgb_r_whitebalance" : \b [int] Whitebalance min: 1000, default: 3300, max: 12000
+- \b "~stereo_i_align_depth" : \b [bool] Whether to align depth to RGB min: False, default: True, max: True
+- \b "~stereo_i_calibration_file" : \b [str] Path to calibration file min: , default: , max: 
+- \b "~stereo_i_bilateral_sigma" : \b [int] Bilateral sigma min: -2147483648, default: 0, max: 2147483647
+- \b "~stereo_i_board_socket_id" : \b [int] Board socket id, depends on alignment min: -2147483648, default: 0, max: 2147483647
+- \b "~stereo_i_decimation_filter_decimation_factor" : \b [int] Decimation factor min: -2147483648, default: 1, max: 2147483647
+- \b "~stereo_i_decimation_filter_decimation_mode" : \b [str] Decimation mode min: , default: PIXEL_SKIPPING, max: 
+- \b "~stereo_i_depth_filter_size" : \b [int] Depth filter size min: -2147483648, default: 5, max: 2147483647
+- \b "~stereo_i_depth_preset" : \b [str] Depth preset min: , default: HIGH_ACCURACY, max: 
+- \b "~stereo_i_enable_decimation_filter" : \b [bool] Enable decimation filter min: False, default: False, max: True
+- \b "~stereo_i_enable_distortion_correction" : \b [bool] Enable distortion correction min: False, default: False, max: True
+- \b "~stereo_i_enable_spatial_filter" : \b [bool] Enable spatial filter min: False, default: False, max: True
+- \b "~stereo_i_enable_temporal_filter" : \b [bool] Enable temporal filter min: False, default: False, max: True
+- \b "~stereo_i_enable_threshold_filter" : \b [bool] Enable threshold filter min: False, default: False, max: True
+- \b "~stereo_i_extended_disp" : \b [bool] Enable extended disparity min: False, default: False, max: True
+- \b "~stereo_i_height" : \b [int] Image height, based on alignment min: -2147483648, default: 720, max: 2147483647
+- \b "~stereo_i_low_bandwidth" : \b [bool] Use encoding for data min: False, default: False, max: True
+- \b "~stereo_i_low_bandwidth_quality" : \b [int] Quality when using low-bandwidth mode min: 1, default: 50, max: 100
+- \b "~stereo_i_lr_check" : \b [bool] Enable left-right check min: False, default: True, max: True
+- \b "~stereo_i_lrc_threshold" : \b [int] Left-right check threshold min: -2147483648, default: 10, max: 2147483647
+- \b "~stereo_i_max_q_size" : \b [int] Internal queue size min: -2147483648, default: 30, max: 2147483647
+- \b "~stereo_i_rectify_edge_fill_color" : \b [int] Rectify edge fill color min: -2147483648, default: 0, max: 2147483647
+- \b "~stereo_i_spatial_filter_alpha" : \b [double] Spatial filter alpha min: -std::numeric_limits<double>::infinity(), default: 0.5, max: std::numeric_limits<double>::infinity()
+- \b "~stereo_i_spatial_filter_delta" : \b [int] Spatial filter delta min: -2147483648, default: 20, max: 2147483647
+- \b "~stereo_i_spatial_filter_hole_filling_radius" : \b [int] Spatial filter hole filling radius min: -2147483648, default: 2, max: 2147483647
+- \b "~stereo_i_spatial_filter_iterations" : \b [int] Spatial filter iterations min: -2147483648, default: 1, max: 2147483647
+- \b "~stereo_i_stereo_conf_threshold" : \b [int] Stereo confidence threshold min: 0, default: 255, max: 255
+- \b "~stereo_i_subpixel" : \b [bool] Subpixel mode min: False, default: False, max: True
+- \b "~stereo_i_temporal_filter_alpha" : \b [double] Temporal filter alpha min: -std::numeric_limits<double>::infinity(), default: 0.4, max: std::numeric_limits<double>::infinity()
+- \b "~stereo_i_temporal_filter_delta" : \b [int] Temporal filter delta min: -2147483648, default: 20, max: 2147483647
+- \b "~stereo_i_temporal_filter_persistency" : \b [str] Temporal filter persistency min: , default: VALID_2_IN_LAST_4, max: 
+- \b "~stereo_i_threshold_filter_max_range" : \b [int] Threshold filter max range min: -2147483648, default: 15000, max: 2147483647
+- \b "~stereo_i_threshold_filter_min_range" : \b [int] Threshold filter min range min: -2147483648, default: 400, max: 2147483647
+- \b "~stereo_i_width" : \b [int] Image width, based on alignment min: -2147483648, default: 1280, max: 2147483647
+- \b "~nn_i_nn_config_path" : \b [str] NN JSON Config path min: , default: depthai_ros_driver/mobilenet, max: 
+- \b "~imu_i_max_q_size" : \b [int] Internal queue size min: -2147483648, default: 30, max: 2147483647
+

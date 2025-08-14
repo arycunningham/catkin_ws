@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/install
+
+Name: qutas_lab_450
+Description: Description of qutas_lab_450
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/install
+
+Name: planetexp_sim
+Description: Description of planetexp_sim
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib -lplanetexp_sim
+Requires: roscpp roslib std_msgs geometry_msgs message_runtime mavros tf

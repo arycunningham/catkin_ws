@@ -1,0 +1,104 @@
+<!-- This launcher runs a demo Gazebo world with several objects and obstacles.  -->
+<launch>
+  <!-- Flags -->
+  <!-- <arg name="use_stereo_simulation" default="false"/> -->
+  <arg name="world" default="o134"/>
+  <arg name="rviz" default="true"/>
+  <arg name="hil_fcu" default="false"/>
+  <arg if="$(arg hil_fcu)" name="hitl_suffix" default="_hitl"/>
+  <arg unless="$(arg hil_fcu)" name="hitl_suffix" default=""/>
+  <!-- Gazebo Config -->
+  <arg name="world_path" default="$(find uav4pe_environments)/worlds/$(arg world)/$(arg world).world"/>
+  <!-- Robot Config -->
+  <arg name="robot_model_x" default="0.0"/>
+  <arg name="robot_model_y" default="0.0"/>
+  <arg name="robot_model_z" default="0.0"/>
+  <arg name="robot_heading" default="0.0"/>
+  
+  <!-- Surface Config for all 4 Maps-->
+  <!-- <arg name="mapA" default="false"/>
+  <arg name="mapBigDanger" default="false"/> -->
+
+  <!-- Target Config -->
+  <!-- <arg name="target_model" default="surface_desiccation"/> -->
+  <arg name="target_model_x" default="1.4"/>
+  <arg name="target_model_y" default="1.4"/>
+  <!-- <group unless="$(arg mapA)">
+    <arg param="target_model_x" value="-1.4"/>
+    <arg param="target_model_y" value="1.4"/>
+  </group> -->
+
+  <!-- Safe/Dangerous Surface Config -->
+  <arg name="red_surface_model" default="surface_red"/>
+  <arg name="red_surface_model_y" default="1.5"/>
+  <!-- <group if="$(arg mapBigDanger)">
+    <arg param="red_surface_model" value="surface_red_long"/>
+    <arg param="red_surface_model_y" value="1.25"/>
+  </group> -->
+
+  <!-- Invariant map Configs -->
+  <arg name="target_model" default="aruco_5x5"/>
+  <arg name="target_model_z" default="0.0"/>
+  <arg name="target_roll" default="0.0"/>
+  <arg name="target_heading" default="0.0"/>
+
+  <!-- Camera Config -->
+  <arg name="camera_ns" default="/"/>
+  <arg name="camera_name" default="oak_d_RGB"/>
+  <!-- <arg name="rviz_config" default="uas_demo_oak_d_RGB"/> -->
+  <arg name="rviz_config" default="uav4pe_nav_view"/>
+  <!-- <arg name="camera_name" default="aruco"/> -->
+  <!-- Rviz Config -->
+  <arg name="rvizFile" default="$(find uav4pe_environments)/launch/$(arg rviz_config).rviz"/>
+  <!-- UAV Config -->
+  <arg name="robot" default="iris"/>
+  <arg name="robot_model" default="$(arg robot)$(arg hitl_suffix)_$(arg camera_name)"/>
+  <arg name="sensor_tf_name" default="origin"/>
+  <arg name="sensor_tf_yaw" default="0.0"/>
+  <arg name="sensor_tf_roll" default="0.0"/>
+  <!-- MAVROS Config -->
+  <arg name="config_yaml" default="$(find uav4pe_environments)/launch/shared/px4_config.yaml"/>
+
+  <!-- ROS transformations -->
+  <node pkg="tf" type="static_transform_publisher" name="tf_local_origin" args="$(arg robot_model_x) $(arg robot_model_y) $(arg robot_model_z) 0 0 0 map local_origin 10"/>
+  <node pkg="tf" type="static_transform_publisher" name="tf_camera" args="0 0 -0.0425 -1.57 0 -3.14 base_link hbv_1615_link 30"/>
+
+  <!-- MAVROS, PX4 SITL and Spawn robot -->
+  <include file="$(find uav4pe_environments)/launch/shared/mavros_px4_sitl.launch">
+    <arg name="px4_config_file" value="$(arg config_yaml)"/>
+    <arg name="world" value="$(arg world_path)"/>
+    <arg name="sdf" value="$(find uav4pe_environments)/models/$(arg robot_model)/model.sdf"/>
+    <arg name="vehicle" value="$(arg robot_model)"/>
+    <arg name="x" value="$(arg robot_model_x)"/>
+    <arg name="y" value="$(arg robot_model_y)"/>
+    <arg name="z" value="$(arg robot_model_z)"/>
+    <arg name="Y" value="$(arg robot_heading)"/>
+    <arg name="verbose" value="true"/>
+  </include>
+ <!-- Rectify camera frames -->
+  <!-- <group ns="$(arg camera_ns)$(arg camera_name)">
+    <node name="cam_image_proc" pkg="image_proc" type="image_proc" output="screen" args=" -image_raw image">
+    </node>
+  </group> -->
+
+  <!-- Run a node for handling data from simulated stereo-camera -->
+  <!-- <group if="$(arg use_stereo_simulation)">
+    <node ns="stereo" pkg="stereo_image_proc" type="stereo_image_proc" name="stereo_image_proc"/>
+  </group> -->
+
+  <!-- Spawn target -->
+  <node name="spawn_target" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -database $(arg target_model) -model $(arg target_model) -x $(arg target_model_x) -y $(arg target_model_y) -z $(arg target_model_z) -R $(arg target_roll) -Y $(arg target_heading)">
+  </node>
+  <!-- Spawn surface Types -->
+  <node name="spawn_green_surface" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -database surface_green -model surface_green -x 0 -y 0 -z 0 -R 0 -Y 0">
+  </node>
+  <node name="spawn_red_surface" pkg="gazebo_ros" type="spawn_model" output="screen" args="-sdf -database $(arg red_surface_model) -model $(arg red_surface_model) -x 0 -y $(arg red_surface_model_y) -z 0 -R 0 -Y 0">
+  </node>
+
+  <!-- RViz visualization -->
+  <node if="$(arg rviz)" pkg="rviz" type="rviz" output="screen" name="rviz" respawn="true" args="-d $(arg rvizFile)">
+  </node>
+
+  <!-- Dynamic Reconfiguration Server -->
+  <!-- <node pkg="rqt_reconfigure" type="rqt_reconfigure" output="screen" name="rqt_reconfigure"/> -->
+</launch>

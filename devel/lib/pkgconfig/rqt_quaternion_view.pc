@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/devel
+
+Name: rqt_quaternion_view
+Description: Description of rqt_quaternion_view
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

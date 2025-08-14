@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+LAUNCH_ARGS=$@
+
+# The following commands will activate OPENVINO environment
+# export OPENVINO_PATH=/opt/intel/openvino_2021
+# source $OPENVINO_PATH/bin/setupvars.sh
+
+# Launch myriad_objDetector.launch with arguments
+roslaunch planetexp_vision oak_d_streamer.launch $LAUNCH_ARGS

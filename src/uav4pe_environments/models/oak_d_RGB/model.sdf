@@ -1,0 +1,71 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="oak_d_RGB">
+    <pose>0 0 0.05 0 0 0</pose>
+    <link name="link">
+      <inertial>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.000166667</ixx>
+          <iyy>0.000166667</iyy>
+          <izz>0.000166667</izz>
+        </inertia>
+      </inertial>
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.0025 0.01 0.01</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name="visual">
+        <geometry>
+          <box>
+            <size>0.0025 0.01 0.01</size>
+          </box>
+        </geometry>
+      </visual>
+      <sensor name="oak_d_RGB" type="camera">
+        <update_rate>25</update_rate>
+        <camera>
+          <horizontal_fov>1.166746</horizontal_fov>
+          <image>
+            <width>256</width>
+            <height>192</height>
+            <format>R8G8B8</format>
+          </image>
+          <clip>
+            <near>0.01</near>
+            <far>300</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.03</stddev>
+          </noise>
+        </camera>
+        <always_on>1</always_on>
+        <visualize>false</visualize>
+        <plugin name='camera_plugin' filename='libgazebo_ros_camera.so'>
+          <robotNamespace>/</robotNamespace>
+          <alwaysOn>true</alwaysOn>
+          <imageTopicName>image_raw</imageTopicName>
+          <cameraInfoTopicName>camera_info</cameraInfoTopicName>
+          <updateRate>25.0</updateRate>
+          <cameraName>oak_d_RGB</cameraName>
+          <frameName>oak_d_RGB_link</frameName>
+          <!-- <CxPrime>324.9767859502426</CxPrime> -->
+          <!-- <Cx>324.9042740349597</Cx> -->
+          <!-- <Cy>302.2157252859055</Cy> -->
+          <!-- <hackBaseline>0</hackBaseline> -->
+          <focalLength>193.9393</focalLength>
+          <!-- <distortionK1>0.07194793341347147</distortionK1> -->
+          <!-- <distortionK2>-0.1399785658515594</distortionK2> -->
+          <!-- <distortionT1>0.007208136185739671</distortionT1> -->
+          <!-- <distortionT2>0.0002329870169238057</distortionT2> -->
+          <!-- <distortionK3>0.0</distortionK3> -->
+        </plugin>
+      </sensor>
+    </link>
+  </model>
+</sdf>

@@ -1,0 +1,13 @@
+material desiccationTexture
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture desiccation.png
+			}
+		}
+	}
+}

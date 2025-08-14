@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/install
+
+Name: rqt_eyedropper
+Description: Description of rqt_eyedropper
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

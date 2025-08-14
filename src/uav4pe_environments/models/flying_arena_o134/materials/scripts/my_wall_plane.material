@@ -1,0 +1,137 @@
+// Following an example from:
+// http://answers.gazebosim.org/question/4761/how-to-build-a-world-with-real-image-as-ground-plane/
+material MyWallPlane/ImageOne
+{
+    technique
+    {
+        pass
+        {
+            //These values can be adapted according to the structure of the lighting, see
+            // http://gazebosim.org/tutorials?tut=color_model
+            ambient 0.5 0.5 0.5 1.0
+            diffuse 1.0 1.0 1.0 1.0
+            specular 0.0 0.0 0.0 1.0 0.5
+
+            // this has to be in reference to the current script, either as URI include, or as ../texture/NYC.jpg instead of just NYC.jpg
+            texture_unit
+            {
+                texture O1341.jpg
+                //This can be different, I assume
+                filtering anisotropic
+            }
+        }
+    }
+}
+
+// Copy of Section above with different values
+material MyWallPlane/ImageTwo
+{
+    technique
+    {
+        pass
+        {
+           lighting off
+           scene_blend alpha_blend
+           depth_write off
+
+            texture_unit
+            {
+                texture O1342.jpg
+                //changed here:
+                alpha_op_ex source1 src_manual src_texture 0.5
+            }
+        }
+    }
+}
+
+// Copy of Section above with different values
+material MyWallPlane/ImageThree
+{
+    technique
+    {
+        pass
+        {
+            ambient 0.5 0.5 0.5 1.0
+            diffuse 1.0 1.0 1.0 1.0
+            specular 0.0 0.0 0.0 1.0 0.5
+
+            texture_unit
+            {
+                texture O1343.jpg
+                filtering trilinear
+            }
+        }
+    }
+}
+
+
+// Copy of Section above with different values - "Stained Glass window" section in OGRE documentation
+material MyWallPlane/ImageFour
+{
+    technique
+    {
+        pass
+        {   //changed values
+            lighting off
+            scene_blend alpha_blend
+            depth_write off
+
+            texture_unit
+            {
+                texture O1344.jpg
+                alpha_op_ex source1 src_manual src_texture 0.5
+            }
+        }
+    }
+}
+
+//Following this example: https://forums.ogre3d.org/viewtopic.php?t=68167
+// With this basic structure: http://wiki.ogre3d.org/Materials#Transparent_colour
+material MyWallPlane/Transparent
+{
+    technique
+    {
+        pass
+        {
+            //These values are almost see-through - they only give a collision, without actually giving a problem as outside boxes
+            ambient 0.88 0.93 0.94 0.10
+            diffuse 0.92 0.94 0.95 0.10
+            specular 1 1 1 1 20
+
+            scene_blend alpha_blend
+        }
+    }
+}
+
+// Problems with invisible walls as defined above in Gazebo 9
+material MyWallPlane/GreyTransparent
+ {
+   technique
+   {
+     pass
+     {
+       scene_blend alpha_blend
+       depth_write off
+       
+       texture_unit
+       {
+         colour_op_ex source1 src_manual src_current .5 .5 .5
+         alpha_op_ex source1 src_manual src_current 0.3
+       }
+     }
+   }
+ }
+
+// Custom Material inserted
+material Gazebo/CustomGrey
+{
+  technique
+  {
+    pass main
+    {
+      ambient .5 .5 .5  1.0
+      diffuse .8 .8 .8  1.0
+      specular 0.01 0.01 0.01 1.000000 1.500000
+    }
+  }
+}

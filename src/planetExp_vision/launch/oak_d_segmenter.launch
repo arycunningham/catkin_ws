@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+  <!-- Global Args -->
+  <!-- <arg name="camera_ns" default="/"/> -->
+  <arg name="camera_name" default="oak_d_RGB"/>
+  <rosparam command="load" file="$(find planetexp_vision)/config/$(arg camera_name).yaml"/>
+  <!-- Oak-D Node Config -->
+  <arg name="node_ns" default="planetexp_vision"/>
+  <arg name="node_script_name" default="oak-d_ros.py"/>
+
+  <!-- Streamer Node -->
+  <node pkg="planetexp_vision" type="$(arg node_script_name)" name="camera_streamer" output="screen" respawn="true" respawn_delay="1" args="--node_ns /$(arg node_ns)"/>
+
+  <!-- Rectify camera frames -->
+  <!-- <group ns="$(arg camera_ns)$(arg camera_name)">
+    <node pkg="image_proc" type="image_proc" name="rect_image" output="screen" args="-image_raw image" respawn="true" respawn_delay="0" />
+  </group> -->
+</launch>

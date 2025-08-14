@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/devel
+
+Name: uav4pe_vision
+Description: Description of uav4pe_vision
+Version: 0.9.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

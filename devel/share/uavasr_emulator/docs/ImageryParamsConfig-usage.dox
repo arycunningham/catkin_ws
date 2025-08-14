@@ -1,0 +1,10 @@
+\subsubsection usage Usage
+\verbatim
+<node name="uavasr_imagery" pkg="uavasr_emulator" type="uavasr_imagery">
+  <param name="framerate" type="double" value="10.0" />
+  <param name="field_of_view" type="double" value="60.0" />
+  <param name="resolution_width" type="int" value="640" />
+  <param name="resolution_height" type="int" value="480" />
+</node>
+\endverbatim
+

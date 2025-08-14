@@ -1,0 +1,250 @@
+<?xml version='1.0'?>
+<!-- To change the values to be netted or not, please switch materials between /ImageNetX and /ImageX
+in lines 132 ff.  -->
+<sdf version='1.6'>
+  <model name='flying_arena_dvp'>
+    <pose frame=''>0 0 0 0 -0 0</pose>
+    <static>1</static>
+    <!-- Grey Ground Plane -->
+    <link name="Ground">
+      <collision name="collision">
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>28 20</size>
+          </plane>
+        </geometry>
+        <surface>
+          <friction>
+            <ode>
+              <mu>100</mu>
+              <mu2>50</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name="visual">
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <plane>
+            <normal>0 0 1</normal>
+            <size>28 20</size>
+          </plane>
+        </geometry>
+        <material>
+          <script>
+            <uri>model://flying_arena_dvp/materials/scripts</uri>
+            <uri>model://flying_arena_dvp/materials/textures</uri>
+            <name>DvP/Floor</name>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <!-- Beginning of Inner Wall Section - Transparent Walls -->
+    <link name='Inner_Wall_0'>
+      <collision name='Inner_Wall_0_Collision'>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+      </collision>
+      <visual name='Inner_Wall_0_Visual'>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <cast_shadows>0</cast_shadows>
+        <transparency>0.9</transparency>
+      </visual>
+      <pose frame=''>-3 0 0 0 -0 1.5708</pose>
+    </link>
+    <link name='Inner_Wall_1'>
+      <collision name='Inner_Wall_1_Collision'>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+      </collision>
+      <visual name='Inner_Wall_1_Visual'>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+        <cast_shadows>false</cast_shadows>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <cast_shadows>0</cast_shadows>
+        <transparency>0.9</transparency>
+      </visual>
+      <pose frame=''>0 3 0 0 -0 0</pose>
+    </link>
+    <link name='Inner_Wall_2'>
+      <collision name='Inner_Wall_2_Collision'>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+      </collision>
+      <visual name='Inner_Wall_2_Visual'>
+        <cast_shadows>false</cast_shadows>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <cast_shadows>0</cast_shadows>
+        <transparency>0.9</transparency>
+      </visual>
+      <pose frame=''>3 0 0 0 0 -1.5708</pose>
+    </link>
+    <link name='Inner_Wall_3'>
+      <collision name='Inner_Wall_3_Collision'>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+      </collision>
+      <visual name='Inner_Wall_3_Visual'>
+        <cast_shadows>false</cast_shadows>
+        <pose frame=''>0 0 3 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>6.15 0.15 6</size>
+          </box>
+        </geometry>
+        <cast_shadows>0</cast_shadows>
+        <transparency>0.9</transparency>
+      </visual>
+      <pose frame=''>0 -3 0 0 -0 3.14159</pose>
+    </link>
+    <!-- End of Inner Wall Section, Beginning Outer Walls Section -->
+    <link name='Outer_Wall_0'>
+      <collision name='Outer_Wall_0_Collision'>
+        <geometry>
+          <box>
+            <size>24.15 0.15 8</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+      </collision>
+      <visual name='Outer_Wall_0_Visual'>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>24.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <!-- Changed Values here -->
+          <script>
+            <uri>model://flying_arena_dvp/materials/scripts</uri>
+            <uri>model://flying_arena_dvp/materials/textures</uri>
+            <!-- <name>DvP/ImageTwo</name> -->
+            <name>DvP/ImageNetTwo</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+      <pose frame=''>0 8 0 0 -0 0</pose>
+    </link>
+    <link name='Outer_Wall_1'>
+      <collision name='Outer_Wall_1_Collision'>
+        <geometry>
+          <box>
+            <size>16.15 0.15 8</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+      </collision>
+      <visual name='Outer_Wall_1_Visual'>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>16.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <!-- Changed Values here -->
+          <script>
+            <uri>model://flying_arena_dvp/materials/scripts</uri>
+            <uri>model://flying_arena_dvp/materials/textures</uri>
+            <!-- <name>DvP/ImageThree</name> -->
+            <name>DvP/ImageNetThree</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+      <pose frame=''>12 0 0 0 0 -1.5708</pose>
+    </link>
+    <link name='Outer_Wall_2'>
+      <collision name='Outer_Wall_2_Collision'>
+        <geometry>
+          <box>
+            <size>24.15 0.15 8</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+      </collision>
+      <visual name='Outer_Wall_2_Visual'>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>24.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <!-- Changed Values here -->
+          <script>
+            <uri>model://flying_arena_dvp/materials/scripts</uri>
+            <uri>model://flying_arena_dvp/materials/textures</uri>
+            <!-- <name>DvP/ImageFour</name> -->
+            <name>DvP/ImageNetFour</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+      <pose frame=''>0 -8 0 0 -0 3.14159</pose>
+    </link>
+    <link name='Outer_Wall_3'>
+      <collision name='Outer_Wall_3_Collision'>
+        <geometry>
+          <box>
+            <size>16.15 0.15 8</size>
+          </box>
+        </geometry>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+      </collision>
+      <visual name='Outer_Wall_3_Visual'>
+        <pose frame=''>0 0 4 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>16.15 0.15 8</size>
+          </box>
+        </geometry>
+        <material>
+          <!-- Changed Values here -->
+          <script>
+            <uri>model://flying_arena_dvp/materials/scripts</uri>
+            <uri>model://flying_arena_dvp/materials/textures</uri>
+            <!-- <name>DvP/ImageOne</name> -->
+            <name>DvP/ImageNetOne</name>
+          </script>
+        </material>
+        <cast_shadows>0</cast_shadows>
+      </visual>
+      <pose frame=''>-12 0 0 0 -0 1.5708</pose>
+    </link>
+  </model>
+</sdf>

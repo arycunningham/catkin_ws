@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/devel
+
+Name: spar_node
+Description: Description of spar_node
+Version: 0.0.0
+Cflags: -I/home/cdrone/catkin_ws/src/spar/spar_node/include
+Libs: -L${prefix}/lib 
+Requires: 

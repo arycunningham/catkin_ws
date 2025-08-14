@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/install
+
+Name: uav4pe_navigation
+Description: Description of uav4pe_navigation
+Version: 1.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

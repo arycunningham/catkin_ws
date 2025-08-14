@@ -1,0 +1,14 @@
+\subsubsection parameters ROS parameters
+
+Reads and maintains the following parameters on the ROS server
+
+- \b "~auto_disarm_height" : \b [double] Height to enable automatic disarm (set to 0 to disable) min: 0.0, default: 0.2, max: std::numeric_limits<double>::infinity()
+- \b "~w0_xy" : \b [double] Natural frequency for lateral position min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~w0_z" : \b [double] Natural frequency vertical position min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~w0_psi" : \b [double] Natural frequency for the heading min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~max_vel_xy" : \b [double] Maximum horizontal velocity min: 0.0, default: 2.5, max: std::numeric_limits<double>::infinity()
+- \b "~max_vel_z" : \b [double] Natural vertical velocity min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~rate_state" : \b [double] Update rate for system state min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~rate_battery" : \b [double] Update rate for battery state min: 0.0, default: 1.0, max: std::numeric_limits<double>::infinity()
+- \b "~rate_pose" : \b [double] Update rate for system pose min: 0.0, default: 50.0, max: std::numeric_limits<double>::infinity()
+

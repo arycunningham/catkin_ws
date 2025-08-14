@@ -1,0 +1,13 @@
+material redTexture
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture redCarpet.png
+			}
+		}
+	}
+}

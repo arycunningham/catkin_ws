@@ -1,0 +1,8 @@
+prefix=/home/cdrone/catkin_ws/devel
+
+Name: rqt_generic_hud
+Description: Description of rqt_generic_hud
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

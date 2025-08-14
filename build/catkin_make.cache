@@ -1,0 +1,2 @@
+breadcrumb:depthai-ros/depthai-ros:depthai-ros/depthai_bridge:depthai-ros/depthai_examples:depthai-ros/depthai_ros_driver:depthai-ros/depthai_ros_msgs:depthai_publisher:egh450_image_processor:egh450_target_solvepnp:planetExp_sim:planetExp_vision:qutas_lab_450:rqt_eyedropper:rqt_generic_hud:rqt_mavros_gui:rqt_quaternion_view:spar/spar_msgs:spar/spar_node:uav4pe_environments:uav4pe_navigation:uav4pe_vision:uavasr_emulator:video_stream_opencv
+-DCATKIN_DEVEL_PREFIX=/home/cdrone/catkin_ws/devel -DCMAKE_INSTALL_PREFIX=/home/cdrone/catkin_ws/install -G Unix Makefiles

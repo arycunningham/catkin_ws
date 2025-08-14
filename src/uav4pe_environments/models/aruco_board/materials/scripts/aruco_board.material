@@ -1,0 +1,13 @@
+material ArucoBoard/Marker
+{
+	technique
+	{
+		pass
+		{
+			texture_unit
+			{
+				texture board2x2.png
+			}
+		}
+	}
+}

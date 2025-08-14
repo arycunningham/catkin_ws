@@ -1,0 +1,23 @@
+<?xml version='1.0'?>
+<sdf version='1.6'>
+  <model name='iris_oak_d_RGB'>
+    <include>
+      <uri>model://iris</uri>
+    </include>
+    <include>
+      <uri>model://oak_d_RGB</uri>
+      <pose>0 0 -0.0425 0 1.57 0</pose>
+    </include>
+    <joint name="iris::oak_d_RGB_joint" type="revolute">
+      <parent>iris::base_link</parent>
+      <child>oak_d_RGB::link</child>
+      <axis>
+        <xyz>0 0 -1</xyz>
+        <limit>
+          <upper>0</upper>
+          <lower>0</lower>
+        </limit>
+      </axis>
+    </joint>
+  </model>
+</sdf>

@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libarea_map.so -o /home/cdrone/catkin_ws/devel/lib/libarea_map.so CMakeFiles/area_map.dir/src/area_map/area_map.cpp.o 
