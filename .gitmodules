@@ -10,3 +10,6 @@
 [submodule "src/spar"]
 	path = src/spar
 	url = https://github.com/arycunningham/spar.git
+[submodule "code_dev"]
+	path = code_dev
+	url = https://github.com/arycunningham/code_dev.git
