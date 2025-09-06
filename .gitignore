@@ -34,3 +34,4 @@ devel_isolated/
 ## -- Miscellaneous
 /pigpio-master
 /master.zip
+.vscode
