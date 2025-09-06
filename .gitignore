@@ -1,7 +1,6 @@
+## -- ROS specific
 /*.bag
 /*.bag.active
-/pigpio-master
-/master.zip
 devel/
 logs/
 build/
@@ -19,3 +18,19 @@ msg/*Result.msg
 msg/_*.py
 build_isolated/
 devel_isolated/
+
+## -- Apple Specific
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.DS_Store
+.AppleDouble
+.LSOverride
+
+## -- Miscellaneous
+/pigpio-master
+/master.zip
